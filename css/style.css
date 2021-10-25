@@ -44,8 +44,12 @@ a:visited{
   flex-basis: 450px;
 }
 
-.gallery img{
+.gallery{
   display: flex;
+  flex-flow: row wrap;
+}
+
+.gallery img{
   border: 10px solid #50C7C7;
   margin: 10px 10px 10px 10px;
   width: 300px;
@@ -74,49 +78,53 @@ a:visited{
 
 /* Larger Screen */
 @media screen and (min-width: 850px) {
-  header{
-    display: flex;
-    justify-content: flex-start;
+  #logo{
+    align-self: flex-start;
   }
 
   body > header{
     position: sticky;
+    top: 0;
   }
   
   .nav_links{
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
     /* width: x%; */
   }
 
   .card{
     flex-basis: 250px;
   }
-
-  
 }
 
 
 
 /* Prefers Reduced Motion */
 @media screen and (prefers-reduced-motion: reduce) {
-  /* .logo{
-    /* not animated */
-  /* } */ 
+  .logo{
+    animation:none;
+  }
 }
 
 
 
 /* Printing */
-@media screen and (min-width: 1200px) {
+@media print {
+  /* (min-width: 1200px) */
   body{
     background-image: none;
   }
 
   /* Edit the nav/nav_links elements so that they are spaced according to the image below. */
+  .nav_links{
+    flex-direction: row;
+    align-items: space-around;
+  }
 
   .pricing{
-    align-items: baseline; 
+    align-items: baseline;
+    flex-flow: row wrap; 
   }
 
   .card{
@@ -124,10 +132,11 @@ a:visited{
     flex-basis: 250px;
   }
 
-  .gallery{
+  .gallery, h2#gallery{
     display: none;
   }
 
   /* Without using list-style-type add the thumbs up entity as shown in the cards. */
+
 }
 
