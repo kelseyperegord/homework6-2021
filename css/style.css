@@ -84,16 +84,20 @@ a:visited{
 
   body > header{
     position: sticky;
-    /* maybe delete? */
     justify-content: space-between;
+    flex-direction: row;
     top: 0;
     left: 0;
+  }
+
+  header nav{
+    width: 100%;
   }
   
   .nav_links{
     display: flex;
     flex-direction: row;
-    /* width: x%; */
+    justify-content: flex-end;
   }
 
   .card{
@@ -120,11 +124,13 @@ a:visited{
  
   header nav{
     display: flex;
-    justify-content: space-around;
+    width: 100%;
   }
 
   .nav_links{
     flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
   }
 
   .pricing{
